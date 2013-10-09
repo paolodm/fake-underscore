@@ -19,4 +19,12 @@ describe('underscore', function() {
       expect(_.flatten([1, [2, [3, [4, 5, 6, 7]]], 8, 9])).to.eql([1, 2, 3, 4, 5, 6, 7, 8, 9]);
     });
   });
+
+  describe('partial', function() {
+    it('should return the value of the function if it doesn\'t take arguments', function() {
+      var fn = function() { return 1; };
+      var partialFn = _.partial(fn);
+      expect(partialFn()).to.eql(1);
+    });
+  });
 });
