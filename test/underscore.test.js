@@ -26,5 +26,12 @@ describe('underscore', function() {
       var partialFn = _.partial(fn);
       expect(partialFn()).to.eql(1);
     });
+
+    it('should return 1', function() {
+      var fn = function(arg1) { return arg1; };
+      var partialFn = _.partial(fn);
+
+      expect(partialFn(1)).to.eql(1);
+    });
   });
 });
