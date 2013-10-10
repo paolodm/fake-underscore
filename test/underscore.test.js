@@ -21,13 +21,13 @@ describe('underscore', function() {
   });
 
   describe('partial', function() {
-    it('should return the value of the function if it doesn\'t take arguments', function() {
+    it('should get the return value of 1 when function is applied with no arguments', function() {
       var fn = function() { return 1; };
       var partialFn = _.partial(fn);
       expect(partialFn()).to.eql(1);
     });
 
-    it('should return 1', function() {
+    it('should return value based on what was passed in', function() {
       var fn = function(arg1) { return arg1; };
       var partialFn = _.partial(fn);
 
