@@ -35,4 +35,10 @@ describe('map', function() {
 
     expect(result).to.eql(['moe', 'larry']);
   });
+
+  it.skip("should map every character of the string", function() {
+    var input = "Hello World!";
+
+    expect(_.map(input, function(ch) { return ch + '.'; })).to.eql(['H.']);
+  });
 });
