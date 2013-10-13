@@ -36,9 +36,9 @@ describe('map', function() {
     expect(result).to.eql(['moe', 'larry']);
   });
 
-  it.skip("should map every character of the string", function() {
-    var input = "Hello World!";
+  it("should map every character of the string", function() {
+    var input = "Hello";
 
-    expect(_.map(input, function(ch) { return ch + '.'; })).to.eql(['H.']);
+    expect(_.map(input, function(ch) { return ch + '.'; })).to.eql(['H.', 'e.', 'l.', 'l.', 'o.']);
   });
 });
