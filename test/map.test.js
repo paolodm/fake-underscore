@@ -53,4 +53,12 @@ describe('map', function() {
   it('should return empty array if empty array passed', function() {
     expect(_.map([], function() { return 1; })).to.eql([]);
   });
+
+  it('should return the same array if function is undefined', function() {
+    expect(_.map([1, 2])).to.eql([1, 2]);
+  });
+
+  it('should return the same array if function is null', function() {
+    expect(_.map([1, 2]), null).to.eql([1, 2]);
+  });
 });
