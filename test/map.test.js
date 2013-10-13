@@ -10,7 +10,7 @@ describe('map', function() {
     expect(_.map(['a', 'b', 'c'], function() { return 1; })).to.eql([1, 1, 1]);
   });
 
-  it("should return [4, 5, 6] for _.map([1, 2, 3], function(letter) { return letter + 3; })", function() {
+  it('should return [4, 5, 6] for _.map([1, 2, 3], function(letter) { return letter + 3; })', function() {
     var result = _.map([1, 2, 3], function(letter) { return letter + 3; });
     expect(result).to.eql([4, 5, 6]);
   });
@@ -25,7 +25,7 @@ describe('map', function() {
     var result = _.map({ 'one': 1, 'two': 2, 'three': 3 }, function(num) { return num * 3; });
   });
 
-  it("should return just the names of an array of people objects", function() {
+  it('should return just the names of an array of people objects', function() {
     var stooges = [
       { 'name': 'moe', 'age': 40 },
       { 'name': 'larry', 'age': 50 }
@@ -36,9 +36,21 @@ describe('map', function() {
     expect(result).to.eql(['moe', 'larry']);
   });
 
-  it("should map every character of the string", function() {
+  it('should map every character of the string', function() {
     var input = "Hello";
 
     expect(_.map(input, function(ch) { return ch + '.'; })).to.eql(['H.', 'e.', 'l.', 'l.', 'o.']);
+  });
+
+  it('should return empty array if undefined passed', function() {
+    expect(_.map(undefined, function() { return 1; })).to.eql([]);
+  });
+
+  it('should return empty array if null passed', function() {
+    expect(_.map(null, function() { return 1; })).to.eql([]);
+  });
+
+  it('should return empty array if empty array passed', function() {
+    expect(_.map([], function() { return 1; })).to.eql([]);
   });
 });
