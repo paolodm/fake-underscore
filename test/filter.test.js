@@ -8,4 +8,11 @@ describe('filter', function() {
       expect(filtered).to.eql([2, 4]);
     });
   });
+
+  describe('edge cases', function() {
+    it('should return [] when input array is []', function() {
+      var filtered = _.filter([], function(el) { return 1; });
+      expect(filtered).to.eql([]);
+    });
+  });
 });
